@@ -2,19 +2,17 @@
 
 /**
  * _puts_recursion - A function that prints a string through recursion
- * @s: It is a string pointer
- * Return: nothing
+ * @s: String pointer
+ * Return: lways 0 (success)
  */
 
 void _puts_recursion(char *s)
 {
-	if (*s == '\0')
+	if (*s)
 	{
-		_putchar('\n');
-		return;
+		_putchar(*s);
+		_puts_recursion(s + 1);
 	}
-
-	_putchar(*s);
-	s++;
-	_puts_recursion(s);
+	else
+		_putchar('\n');
 }
